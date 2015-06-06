@@ -26,21 +26,23 @@ public class CharacterSheet extends ActionBarActivity {
 
         Intent intent = getIntent();
         ArrayList<String> array_list = intent.getStringArrayListExtra(MainActivity.MAIN_MESSAGE);
-        // String message = intent.getStringExtra(MainActivity.MAIN_MESSAGE);
+        //gets the arraylist from the intent ^ see how it has a special function for arraylists!
+
 
 
         listView = (ListView) findViewById(R.id.mainListView);
-
+        // we want to be able to put the arraylist into a 'list view', so we declare it!
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                this, android.R.layout.simple_list_item_1, array_list);
+                this, android.R.layout.simple_list_item_1, array_list);  //gotta have an adaptor tho for data structures
+
 
         textTest = (TextView) findViewById(R.id.textViewTest);
         titleName = array_list.get(0);   //just for funzzz xox
         textTest.setText(titleName);
 
 
-        listView.setAdapter(adapter);
+        listView.setAdapter(adapter); //this will 'plug it all in'
     }
 
 

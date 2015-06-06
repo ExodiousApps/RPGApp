@@ -5,6 +5,13 @@ import android.view.View;
 
 /**
  * Created by Andrew Ramsier on 05/06/2015.
+ *
+ * you can ignore this or use it idc.
+ * it doesnt really do anything so if you wanna change the behavior feel free
+ *
+ * always remember to commit the changes you make individually, not the whole project!
+ * and ask if someone is using it!!!!
+ *
  */
 public class GetNSet {
     private String name;

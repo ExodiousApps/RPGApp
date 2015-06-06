@@ -26,7 +26,7 @@ public class CharBuildMenu extends ActionBarActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_char_build_menu);
-        NumberSelect(); //carries out numberSelect by default = object orientation yooooo
+        // NumberSelect(); //carries out numberSelect by default = object orientation yooooo
 
     }
 
@@ -35,18 +35,18 @@ public class CharBuildMenu extends ActionBarActivity {
 
         Intent intent = new Intent(this, CharacterSheet.class); //intents are android for go here, this is just declaring it for later
 
-        editNameText = (EditText) findViewById(R.id.edit_message); //grabbing info from editext boxes
-        editAgeText = (EditText) findViewById(R.id.editTextAge);
-        editClassText = (EditText) findViewById(R.id.editTextClass);
-        editClassRace = (EditText) findViewById(R.id.editTextRace);
-        editClassAlig = (EditText) findViewById(R.id.editTextAlignment);
+        //grabbing info from editext boxes and converting to strings
+        //this involved SOO MUCH REFACTORING. it used to be half a page long of changing individual atributes
+        //dont be afraid to do stuff that looks ridiculous, because it might work.
+
+
         ArrayList<String> arrayList = new ArrayList<>();
 
-        String nameStr = editNameText.getText().toString(); //converting all to basic strings so we can add to an arraylist
-        String ageStr = editAgeText.getText().toString();
-        String classStr = editClassText.getText().toString();
-        String raceStr = editClassRace.getText().toString();
-        String aligStr = editClassAlig.getText().toString();
+        String nameStr = (editNameText = (EditText) findViewById(R.id.edit_message)).getText().toString(); //converting all to basic strings so we can add to an arraylist
+        String ageStr = (editAgeText = (EditText) findViewById(R.id.editTextAge)).getText().toString();
+        String classStr = (editClassText = (EditText) findViewById(R.id.editTextClass)).getText().toString();
+        String raceStr = (editClassRace = (EditText) findViewById(R.id.editTextRace)).getText().toString();
+        String aligStr = (editClassAlig = (EditText) findViewById(R.id.editTextAlignment)).getText().toString();
 
 
         arrayList.add("Name: " + nameStr); //adding to arraylist
@@ -76,7 +76,8 @@ public class CharBuildMenu extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void NumberSelect() {   // THIS DEALS WITH THE NUMBER WHEELS - RENDER + SET VALUES.
+   /* public void NumberSelect() {   // THIS DEALS WITH THE NUMBER WHEELS - RENDER + SET VALUES.   //I HAVE REMOVED THIS FEATURE, IT LOOKED BAD.
+                        // Still a good example of applying features to multiple elements
         //arraylists are the coolest things ever. use them often as they hold objects n stuff.
 
         ArrayList<NumberPicker> pickerArray = new ArrayList<>();
@@ -110,7 +111,7 @@ public class CharBuildMenu extends ActionBarActivity {
 
         }
 
-    }
+    }*/
     //END OF NUMBERSELECT()
 }
 
