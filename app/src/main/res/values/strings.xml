@@ -5,4 +5,5 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_display_array">Character Sheet</string>
     <string name="title_activity_char_build_menu">Create Character</string>
+    <string name="title_activity_db_test">DbTest</string>
 </resources>

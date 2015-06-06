@@ -3,6 +3,11 @@ package com.example.andrew.rpgapp;
 import android.widget.EditText;
 import android.view.View;
 
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 /**
  * Created by Andrew Ramsier on 05/06/2015.
  *
@@ -19,6 +24,7 @@ public class GetNSet {
     private String charClass;  //can't name stuff class yo
     private String race;
     private String alignment;
+    private ArrayList list;
 
 
     public String getName() {
@@ -60,6 +66,7 @@ public class GetNSet {
     public void setAlignment(String alignment) {
         this.alignment = alignment;
     }
+
 
 }
 

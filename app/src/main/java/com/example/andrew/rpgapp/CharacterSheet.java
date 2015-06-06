@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 
@@ -43,6 +45,8 @@ public class CharacterSheet extends ActionBarActivity {
 
 
         listView.setAdapter(adapter); //this will 'plug it all in'
+
+
     }
 
 

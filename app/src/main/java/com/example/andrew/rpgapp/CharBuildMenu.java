@@ -42,7 +42,8 @@ public class CharBuildMenu extends ActionBarActivity {
 
         ArrayList<String> arrayList = new ArrayList<>();
 
-        String nameStr = (editNameText = (EditText) findViewById(R.id.edit_message)).getText().toString(); //converting all to basic strings so we can add to an arraylist
+        String nameStr = (editNameText = (EditText) findViewById(R.id.edit_message)).getText().toString();
+        //converting all to basic strings so we can add to an arraylist
         String ageStr = (editAgeText = (EditText) findViewById(R.id.editTextAge)).getText().toString();
         String classStr = (editClassText = (EditText) findViewById(R.id.editTextClass)).getText().toString();
         String raceStr = (editClassRace = (EditText) findViewById(R.id.editTextRace)).getText().toString();
@@ -76,50 +77,5 @@ public class CharBuildMenu extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-   /* public void NumberSelect() {   // THIS DEALS WITH THE NUMBER WHEELS - RENDER + SET VALUES.   //I HAVE REMOVED THIS FEATURE, IT LOOKED BAD.
-                        // Still a good example of applying features to multiple elements
-        //arraylists are the coolest things ever. use them often as they hold objects n stuff.
-
-        ArrayList<NumberPicker> pickerArray = new ArrayList<>();
-
-// couldnt be bothered to make a collection of elements as styling them is hard, so i did it this way
-
-        NumberPicker np1 = (NumberPicker) findViewById(R.id.numberPicker1);  //comment each line as per the point spec, make it easier to mod
-        NumberPicker np2 = (NumberPicker) findViewById(R.id.numberPicker2); // e.g. Constitution
-        NumberPicker np3 = (NumberPicker) findViewById(R.id.numberPicker3); // Intelligence
-        NumberPicker np4 = (NumberPicker) findViewById(R.id.numberPicker4);
-        NumberPicker np5 = (NumberPicker) findViewById(R.id.numberPicker5);
-
-        pickerArray.addAll(Arrays.asList(np1, np2, np3, np4, np5));
-
-        int size = pickerArray.size();
-
-        String[] nums = new String[21];
-
-        for (int t = 0; t < nums.length; t++) {
-            nums[t] = Integer.toString(t);
-        }
-
-
-        for (int i = 0; i < size; i++) {
-
-            pickerArray.get(i).setMinValue(0);
-            pickerArray.get(i).setMaxValue(20);
-            pickerArray.get(i).setWrapSelectorWheel(true);
-            pickerArray.get(i).setDisplayedValues(nums);
-            pickerArray.get(i).setValue(1);
-
-        }
-
-    }*/
-    //END OF NUMBERSELECT()
 }
 
-
-// NOTE TO ANDY - you have to be able to grab the number and display points left to the side of it (outside of scrollview?)
-// if points remaining == 0  possibly do not render the points remaining (maxValue)
-/* if(pointsRemaining >=20){
- np.setMaxValue(20)}
- else {
- np.setMaxValue(pointsRemaining);
-  */
