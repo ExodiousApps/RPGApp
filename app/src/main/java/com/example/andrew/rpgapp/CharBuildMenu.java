@@ -26,7 +26,7 @@ public class CharBuildMenu extends ActionBarActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_char_build_menu);
-        // NumberSelect(); //carries out numberSelect by default = object orientation yooooo
+        // NumberSelect(); //carries out numberSelect if we make a numberselect class, but i deleted that = object orientation yooooo
 
     }
 
