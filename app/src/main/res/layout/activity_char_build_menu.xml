@@ -131,6 +131,16 @@
         android:layout_alignRight="@+id/scrollView"
         android:layout_alignEnd="@+id/scrollView" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Random"
+        android:id="@+id/randomBtn"
+        android:onClick="sendRNGMessage"
+        android:layout_alignTop="@+id/nameButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 
 </RelativeLayout>
 

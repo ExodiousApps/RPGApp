@@ -8,8 +8,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 
 public class CharBuildMenu extends ActionBarActivity {
@@ -17,11 +21,14 @@ public class CharBuildMenu extends ActionBarActivity {
 
     public final static String MAIN_MESSAGE = "com.example.andrew.rpgapp.MESSAGE"; //just one of those things you need to have for sending messages through intent
 
+    String  nameText;
+
     private EditText editNameText; //declarations
     private EditText editAgeText;
     private EditText editClassText;
     private EditText editClassRace;
     private EditText editClassAlig;
+
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +67,49 @@ public class CharBuildMenu extends ActionBarActivity {
         intent.putExtra(MAIN_MESSAGE, arrayList); //intent.putExtra means you can package data and send it to other activities! cool yea?!
 
         startActivity(intent); //carries out the intent
+    }
+    public void sendRNGMessage(View view) {
+
+        Intent intent = new Intent(this, CharacterSheet.class);
+
+        ArrayList<String> arrayList = new ArrayList<>();
+
+        nameText = editNameText.getText().toString();
+        if (nameText.matches("")) {
+            //random number generator
+            Random rn = new Random();
+            int answer = rn.nextInt(30) + 1;
+
+            //read line from name file
+
+            String nameStr = FileUtils.readLines(name.txt).get(answer);
+
+
+            //save random name to array
+            arrayList.add("Name: " + nameStr);
+        }
+        else {
+
+
+        String nameStr = (editNameText = (EditText) findViewById(R.id.edit_message)).getText().toString();
+            arrayList.add("Name: " + nameStr);
+    }
+
+        String ageStr = (editAgeText = (EditText) findViewById(R.id.editTextAge)).getText().toString();
+        String classStr = (editClassText = (EditText) findViewById(R.id.editTextClass)).getText().toString();
+        String raceStr = (editClassRace = (EditText) findViewById(R.id.editTextRace)).getText().toString();
+        String aligStr = (editClassAlig = (EditText) findViewById(R.id.editTextAlignment)).getText().toString();
+
+
+        arrayList.add("Age: " + ageStr);
+        arrayList.add("Class: " + classStr);
+        arrayList.add("Race: " + raceStr);
+        arrayList.add("Alignment: " + aligStr);
+
+
+        intent.putExtra(MAIN_MESSAGE, arrayList);
+
+        startActivity(intent);
     }
 
     @Override  //this is built by android studio - not me, so i dont worry about it

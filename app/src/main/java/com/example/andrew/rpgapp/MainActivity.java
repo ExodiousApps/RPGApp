@@ -24,6 +24,8 @@ public class MainActivity extends ActionBarActivity {
         titleName = "Monks are an awful class to play and pandas make them worse.              //sorry, not sorry";   //just for funzzz xox
         mainTitleView.setText(titleName);
 
+
+
     }
 
     public void sendBuildMenu(View view) {

@@ -9,7 +9,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
- * Created by Andrew Ramsier on 05/06/2015.
+ * Created by a fat panda on 05/06/2015. NEVER FORGET r.i.p
  *
  * you can ignore this or use it idc.
  * it doesnt really do anything so if you wanna change the behavior feel free
