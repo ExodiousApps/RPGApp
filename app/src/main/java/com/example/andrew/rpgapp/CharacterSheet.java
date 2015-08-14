@@ -19,6 +19,7 @@ public class CharacterSheet extends ActionBarActivity {
     private ListView listView;
     private TextView textTest;
     private String titleName;
+    private String randName;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,9 @@ public class CharacterSheet extends ActionBarActivity {
 
 
         Intent intent = getIntent();
+
         ArrayList<String> array_list = intent.getStringArrayListExtra(MainActivity.MAIN_MESSAGE);
+
         //gets the arraylist from the intent ^ see how it has a special function for arraylists!
 
 
@@ -41,6 +44,7 @@ public class CharacterSheet extends ActionBarActivity {
 
         textTest = (TextView) findViewById(R.id.textViewTest);
         titleName = array_list.get(0);   //just for funzzz xox
+
         textTest.setText(titleName);
 
 

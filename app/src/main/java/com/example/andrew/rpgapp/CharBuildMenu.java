@@ -74,7 +74,7 @@ public class CharBuildMenu extends ActionBarActivity {
 
         Intent intent = new Intent(this, CharacterSheet.class);
 
-        ArrayList<String> arrayList = new ArrayList<>();
+        ArrayList<String> arrayListRand = new ArrayList<>();
 
         nameText = editNameText.getText().toString();
         if (nameText.matches("")) {
@@ -98,13 +98,13 @@ public class CharBuildMenu extends ActionBarActivity {
 
             //save random name to array
 
-            arrayList.add("Name: " + nameStr);
+            arrayListRand.add("Name: " + nameStr);
         }
         else {
 
 
         String nameStr = (editNameText = (EditText) findViewById(R.id.edit_message)).getText().toString();
-            arrayList.add("Name: " + nameStr);
+            arrayListRand.add("Name: " + nameStr);
     }
 
         String ageStr = (editAgeText = (EditText) findViewById(R.id.editTextAge)).getText().toString();
@@ -113,15 +113,15 @@ public class CharBuildMenu extends ActionBarActivity {
         String aligStr = (editClassAlig = (EditText) findViewById(R.id.editTextAlignment)).getText().toString();
 
 
-        arrayList.add("Age: " + ageStr);
-        arrayList.add("Class: " + classStr);
-        arrayList.add("Race: " + raceStr);
-        arrayList.add("Alignment: " + aligStr);
+        arrayListRand.add("Age: " + ageStr);
+        arrayListRand.add("Class: " + classStr);
+        arrayListRand.add("Race: " + raceStr);
+        arrayListRand.add("Alignment: " + aligStr);
 
 
-        intent.putExtra(MAIN_MESSAGE, arrayList);
+        intent.putExtra(MAIN_MESSAGE, arrayListRand);
 
-        startActivity(intent);
+
     }
 
     @Override  //this is built by android studio - not me, so i dont worry about it
