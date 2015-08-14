@@ -10,6 +10,7 @@ import android.widget.NumberPicker;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -68,7 +69,8 @@ public class CharBuildMenu extends ActionBarActivity {
 
         startActivity(intent); //carries out the intent
     }
-    public void sendRNGMessage(View view) {
+
+    public void sendRNGMessage(View view) throws IOException {
 
         Intent intent = new Intent(this, CharacterSheet.class);
 
@@ -82,10 +84,20 @@ public class CharBuildMenu extends ActionBarActivity {
 
             //read line from name file
 
-            String nameStr = FileUtils.readLines(name.txt).get(answer);
+            FileInputStream fs = new FileInputStream("name.txt");
+            BufferedReader br = new BufferedReader(new InputStreamReader(fs));
+
+
+            for (int i = 0; i < answer; ++i) {
+                br.readLine();
+            }
+            String nameStr = br.readLine();
+
+            //String nameStr = FileUtils.readLines(name.txt).get(answer);
 
 
             //save random name to array
+
             arrayList.add("Name: " + nameStr);
         }
         else {
