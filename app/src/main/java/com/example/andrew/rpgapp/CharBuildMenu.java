@@ -6,15 +6,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.NumberPicker;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
 
 
 public class CharBuildMenu extends ActionBarActivity {
@@ -22,7 +16,7 @@ public class CharBuildMenu extends ActionBarActivity {
 
     public final static String MAIN_MESSAGE = "com.example.andrew.rpgapp.MESSAGE"; //just one of those things you need to have for sending messages through intent
 
-    String  nameText;
+    String nameText;
 
     private EditText editNameText; //declarations
     private EditText editAgeText;
@@ -39,7 +33,7 @@ public class CharBuildMenu extends ActionBarActivity {
     }
 
 
-    public void sendMessage(View view) { //the edit character boxes
+    public void sendMessage(View view) throws IOException { //the edit character boxes
 
         Intent intent = new Intent(this, CharacterSheet.class); //intents are android for go here, this is just declaring it for later
 
@@ -62,67 +56,28 @@ public class CharBuildMenu extends ActionBarActivity {
         arrayList.add("Age: " + ageStr);
         arrayList.add("Class: " + classStr);
         arrayList.add("Race: " + raceStr);
-        arrayList.add("Alignment: " + aligStr);
+        arrayList.add("Allignment: " + aligStr);
 
 
         intent.putExtra(MAIN_MESSAGE, arrayList); //intent.putExtra means you can package data and send it to other activities! cool yea?!
 
         startActivity(intent); //carries out the intent
+
+
     }
 
-    public void sendRNGMessage(View view) throws IOException {
-
+    public void sendRNGchar(View view) {
         Intent intent = new Intent(this, CharacterSheet.class);
 
-        ArrayList<String> arrayListRand = new ArrayList<>();
+        RandCharBuild rand = new RandCharBuild();
 
-        nameText = editNameText.getText().toString();
-        if (nameText.matches("")) {
-            //random number generator
-            Random rn = new Random();
-            int answer = rn.nextInt(30) + 1;
+        ArrayList<String> randList = rand.nameReturn();
 
-            //read line from name file
-
-            FileInputStream fs = new FileInputStream("name.txt");
-            BufferedReader br = new BufferedReader(new InputStreamReader(fs));
-
-
-            for (int i = 0; i < answer; ++i) {
-                br.readLine();
-            }
-            String nameStr = br.readLine();
-
-            //String nameStr = FileUtils.readLines(name.txt).get(answer);
-
-
-            //save random name to array
-
-            arrayListRand.add("Name: " + nameStr);
-        }
-        else {
-
-
-        String nameStr = (editNameText = (EditText) findViewById(R.id.edit_message)).getText().toString();
-            arrayListRand.add("Name: " + nameStr);
-    }
-
-        String ageStr = (editAgeText = (EditText) findViewById(R.id.editTextAge)).getText().toString();
-        String classStr = (editClassText = (EditText) findViewById(R.id.editTextClass)).getText().toString();
-        String raceStr = (editClassRace = (EditText) findViewById(R.id.editTextRace)).getText().toString();
-        String aligStr = (editClassAlig = (EditText) findViewById(R.id.editTextAlignment)).getText().toString();
-
-
-        arrayListRand.add("Age: " + ageStr);
-        arrayListRand.add("Class: " + classStr);
-        arrayListRand.add("Race: " + raceStr);
-        arrayListRand.add("Alignment: " + aligStr);
-
-
-        intent.putExtra(MAIN_MESSAGE, arrayListRand);
-
+        intent.putExtra(MAIN_MESSAGE, randList);
+        startActivity(intent);
 
     }
+
 
     @Override  //this is built by android studio - not me, so i dont worry about it
     public boolean onOptionsItemSelected(MenuItem item) {

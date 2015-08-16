@@ -21,7 +21,7 @@ public class MainActivity extends ActionBarActivity {
 
 
         mainTitleView = (TextView) findViewById(R.id.mainTextView);
-        titleName = "Monks are an awful class to play and pandas make them worse.              //sorry, not sorry";   //just for funzzz xox
+        titleName = "Drew needs to learn to simplify how he does things!";   //just for funzzz xox
         mainTitleView.setText(titleName);
 
 

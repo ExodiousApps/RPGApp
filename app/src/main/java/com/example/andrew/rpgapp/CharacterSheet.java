@@ -8,8 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 
 
@@ -20,7 +19,7 @@ public class CharacterSheet extends ActionBarActivity {
     private TextView textTest;
     private String titleName;
     private String randName;
-
+    RandCharBuild charName = new RandCharBuild();
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,25 +29,26 @@ public class CharacterSheet extends ActionBarActivity {
         Intent intent = getIntent();
 
         ArrayList<String> array_list = intent.getStringArrayListExtra(MainActivity.MAIN_MESSAGE);
-
-        //gets the arraylist from the intent ^ see how it has a special function for arraylists!
-
-
+        ArrayList<String> randList = charName.nameReturn();
 
         listView = (ListView) findViewById(R.id.mainListView);
-        // we want to be able to put the arraylist into a 'list view', so we declare it!
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                this, android.R.layout.simple_list_item_1, array_list);  //gotta have an adaptor tho for data structures
-
-
         textTest = (TextView) findViewById(R.id.textViewTest);
-        titleName = array_list.get(0);   //just for funzzz xox
-
-        textTest.setText(titleName);
+        // titleName = array_list.get(0);   //just for funzzz xox
 
 
-        listView.setAdapter(adapter); //this will 'plug it all in'
+        textTest.setText("Random Name: " + randList.get(0));
+
+        if (array_list != null) {
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                    this, android.R.layout.simple_list_item_1, array_list);  //gotta have an adaptor tho for data structures
+            listView.setAdapter(adapter);
+        } else {
+            ArrayAdapter<String> randAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, randList);
+            listView.setAdapter(randAdapter);
+        }
+
+
+        //this will 'plug it all in'
 
 
     }
