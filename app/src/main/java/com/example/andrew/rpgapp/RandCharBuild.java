@@ -65,7 +65,7 @@ public class RandCharBuild {
         nameArray.addAll(Arrays.asList("Steve", "Jordon", "Hector", "Newton", "Leonard", "Jeffery", "Cody", "Brendan", "Jacinto",
                 "Mel", "Mitch", "Theodore", "Patricia", "Gerry", "Felix", "Timmy", "George", "Johnathan", "Benjamin",
                 "Edwin", "Charlie", "Tommie", "Carlo", "Saul", "Carlos", "Leroy", "Courtney", "Gail", "Tyler", "Robert", "Brewhan",
-                "Englebert Humperdink", "Fornos", "Jack", "Kim Jong", "Khalsie"));
+                "Englebert Humperdink", "Jack", "Kim Jong", "Khalsie", "Héilagur", "Drewid", "Crabbi"));
 
         int index = r.nextInt(nameArray.size());
         String nameVal = nameArray.get(index);

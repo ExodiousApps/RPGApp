@@ -36,16 +36,13 @@ public class CharacterSheet extends ActionBarActivity {
         // titleName = array_list.get(0);   //just for funzzz xox
 
 
-        textTest.setText("Random Name: " + randList.get(0));
+        textTest.setText("Hello World");
 
-        if (array_list != null) {
+
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                     this, android.R.layout.simple_list_item_1, array_list);  //gotta have an adaptor tho for data structures
-            listView.setAdapter(adapter);
-        } else {
-            ArrayAdapter<String> randAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, randList);
-            listView.setAdapter(randAdapter);
-        }
+
+        listView.setAdapter(adapter);
 
 
         //this will 'plug it all in'
