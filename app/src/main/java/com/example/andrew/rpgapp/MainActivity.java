@@ -21,7 +21,7 @@ public class MainActivity extends ActionBarActivity {
 
 
         mainTitleView = (TextView) findViewById(R.id.mainTextView);
-        titleName = "Drew needs to learn to simplify how he does things!";   //just for funzzz xox
+        titleName = "Lets make everything colourful! Fuck the brits and there 'colours'!";   //just for funzzz xox
         mainTitleView.setText(titleName);
 
 
@@ -46,7 +46,7 @@ public class MainActivity extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        // as you specify a parent activity in Andro idManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement

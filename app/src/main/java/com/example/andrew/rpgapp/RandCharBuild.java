@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
- * Created by Andrew on 15-Aug-15.
+ * Created by Andrew(faggot) on 15-Aug-15.
  *
  * SCROLL DOWN LOADS WE ONLY USE THE NAMERETURN CLASS. i left the other one here to show what changed
  */
@@ -65,10 +65,16 @@ public class RandCharBuild {
         nameArray.addAll(Arrays.asList("Steve", "Jordon", "Hector", "Newton", "Leonard", "Jeffery", "Cody", "Brendan", "Jacinto",
                 "Mel", "Mitch", "Theodore", "Patricia", "Gerry", "Felix", "Timmy", "George", "Johnathan", "Benjamin",
                 "Edwin", "Charlie", "Tommie", "Carlo", "Saul", "Carlos", "Leroy", "Courtney", "Gail", "Tyler", "Robert", "Brewhan",
-                "Englebert Humperdink", "Jack", "Kim Jong", "Khalsie", "Héilagur", "Drewid", "Crabbi"));
+                "Englebert Humperdink", "Jack", "Kim Jong", "Kim Jong Un", "Kim Jong Brewhan", "Khalsie", "Hï¿½ilagur", "Drewid", "Crabbi"));
 
         int index = r.nextInt(nameArray.size());
         String nameVal = nameArray.get(index);
+
+        //RACE
+
+        raceArray.addAll(Arrays.asList("Dragonborn", "Drow", "Dwarf", "Eladrin", "Elf / High Elf", "Gnome / Rock Gnome", "Half-Elf", "Half-Orc", "Halfling / Hobbit", "Human", "Tiefling"));
+        index = r.nextInt(raceArray.size());
+        String raceVal = raceArray.get(index);
 
 
         //AGES 11 THROUGH 110
@@ -87,11 +93,6 @@ public class RandCharBuild {
         index = r.nextInt(classArray.size());
         String classVal = classArray.get(index);
 
-        //RACISM
-
-        raceArray.addAll(Arrays.asList("Dragonborn", "Drow", "Dwarf", "Eladrin", "Elf / High Elf", "Gnome / Rock Gnome", "Half-Elf", "Half-Orc", "Halfling / Hobbit", "Human", "Tiefling"));
-        index = r.nextInt(raceArray.size());
-        String raceVal = raceArray.get(index);
 
         //ALLIGNMENT
 
